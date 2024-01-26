@@ -138,6 +138,9 @@ output/
 outputs/
 subs/
 logs/
+*.out
+data/
+images_with_bounding_boxes/
 
 grounding/config/configs
 grounding/version.py

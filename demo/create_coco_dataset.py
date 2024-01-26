@@ -1,4 +1,4 @@
-import typer
+# import typer
 from groundingdino.util.inference import load_model, load_image, predict
 from tqdm import tqdm
 import torchvision
@@ -7,16 +7,16 @@ import fiftyone as fo
 
 
 def main(
-        image_directory: str = 'test_grounding_dino',
-        text_prompt: str = 'bus, car',
+        image_directory: str = "/home/ec2-user/sepand/MachineLearningExperiments/data/yolo/images/test/",
+        text_prompt: str = 'fish, human',
         box_threshold: float = 0.15, 
         text_threshold: float = 0.10,
         export_dataset: bool = False,
         view_dataset: bool = False,
         export_annotated_images: bool = True,
-        weights_path : str = "groundingdino_swint_ogc.pth",
-        config_path: str = "../../GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py",
-        subsample: int = None,
+        weights_path : str = "/home/ec2-user/angran/GroundingDINO/weights/groundingdino_swint_ogc.pth",
+        config_path: str = "/home/ec2-user/angran/GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py",
+        subsample: int = 1000,
     ):
 
     model = load_model(config_path, weights_path)
@@ -80,4 +80,4 @@ def main(
 
 
 if __name__ == '__main__':
-    typer.run(main)
+    main()
